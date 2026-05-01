@@ -1,0 +1,53 @@
+# 🐳 Docker Setup for MySQL (Hospital Analytics Project)
+
+## 1. Pull MySQL Image
+docker pull mysql:8
+
+---
+
+## 2. Run MySQL Container
+
+docker run --name hms-mysql ^
+-p 3307:3306 ^
+-e MYSQL_ROOT_PASSWORD=pass ^
+-e MYSQL_DATABASE=hms ^
+-d mysql:8
+
+(Note: Use ^ for multiline in Windows CMD)
+
+---
+
+## 3. Verify Container
+
+docker ps
+
+You should see:
+PORTS → 0.0.0.0:3307->3306
+
+---
+
+## 4. Connect using MySQL Workbench
+
+Host: localhost  
+Port: 3307  
+User: root  
+Password: pass  
+Database: hms  
+
+---
+
+## 5. Stop Container
+
+docker stop hms-mysql
+
+---
+
+## 6. Start Again
+
+docker start hms-mysql
+
+---
+
+## 7. Remove Container (if needed)
+
+docker rm -f hms-mysql

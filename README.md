@@ -120,5 +120,4 @@ streamlit run app.py
 
 ## Author
 Debarati Pal
-[Your Name]
 
